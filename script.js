@@ -55,25 +55,42 @@ let movieData = {
   };
 
 
-  //Creating variables
+  //Creating variables for DOM manipulation
   let text = document.getElementById("text");
   let values = document.getElementById("values");
 
+  //Creating variables for accessing properties
+  //let darjeelingObject = movieData["The Darjeeling Limited"];
+  //Showing values of The Darjeeling Limited object
 
-  //Iterating through keys
-  let object = ""; 
+  //Iterating through keys of movieData object
+  let movieObject = ""; 
   for (x in movieData) {
-      object += x + "<br>";
+      movieObject += x + "<br>";
   }
 
+  //Iterating through key values of "The Darjeeling Limited" object
+  let darjeelingObject = "";
+  let darjeelingObjData = movieData["The Darjeeling Limited"];
+  // console.log(darjeelingObjData.plot);
+  console.log(Object.values(darjeelingObjData)[1][0]);
+  //NEXT STEPS: the above gets you the values for the Darjeeling object. Next assign each value to a variable so that you can access all values (and do the same for the other movies). Also try using Object.entries() because it gets you the key+value and might be easier
+  for (x in darjeelingObjData) {
+    darjeelingObject += x + "<br>";
+  }
+  //currently the above is iterating through the keys only, not the values
+  //can the below be helpful to access the entries?
 
-  //Alternative way to iterate through keys
-  //let keys = Object.keys(movieData);
+  // let darjeelingLimited = movieData["The Darjeeling Limited"];
+  // for (let darjeelingEntry of Object.entries(darjeelingLimited)) {
+    // alert(darjeelingEntry);
+  // }
+
 
    //Manipulating DOM
-   text.innerHTML = object;
-   values.innerHTML = objectValues;
-
+   text.innerHTML = movieObject;
+  values.innerHTML = darjeelingObject;
+  
  
   
   
